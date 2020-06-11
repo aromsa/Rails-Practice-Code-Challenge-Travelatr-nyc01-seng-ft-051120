@@ -1,0 +1,19 @@
+<h1> Edit Post <h1>
+
+<%= form_for @post do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
+  <%= f.label :blogger_id %>
+  <%= f.collection_select :blogger_id, @bloggers, :id, :name %>
+
+  <%= f.label :destination_id %>
+  <%= f.collection_select :destination_id, @destinations, :id, :country %>
+
+  <%= f.submit %>
+
+  <% end %>
